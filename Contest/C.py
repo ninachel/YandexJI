@@ -1,7 +1,7 @@
 n = int(input())
-hash_map = dict()
+nums = set()
 for i in range(n):
     el = int(input())
-    if el not in hash_map:
-        hash_map[el] = 1
-        print(el, end='\n')
+    nums.add(el)
+for el in sorted(list(nums)):
+    print(el, end='\n')
