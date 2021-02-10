@@ -9,3 +9,5 @@ for i in range(n):
         if el != last_printed:
             print(el)
             last_printed = el
+    if i == n - 1:
+        

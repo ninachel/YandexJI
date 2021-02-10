@@ -1,25 +1,12 @@
-import itertools
-
-
-def valid_parentheses(seq):
-    stack = []
-    for i in range(len(seq)):
-        if seq[i] == ')':
-            if not stack:
-                return False
-            else:
-                stack.pop()
-        else:
-            stack.append(seq[i])
-    if not stack:
-        return True
-    return False
+def valid_parentheses(s, l, r, pairs):
+    if l == pairs and r == pairs:
+        print(s)
+    else:
+        if l < pairs:
+            valid_parentheses(s + '(', l + 1, r, pairs)
+        if r < l:
+            valid_parentheses(s + ')', l, r + 1, pairs)
 
 
 n = int(input())
-sample = "(" * n + ")" * n
-options = list(set(itertools.permutations(sample)))
-result = []
-for x in sorted(options):
-    if valid_parentheses(x):
-        print(''.join(x))
+valid_parentheses('', 0, 0, n)
