@@ -20,8 +20,6 @@ n = int(input())
 sample = "(" * n + ")" * n
 options = list(set(itertools.permutations(sample)))
 result = []
-for x in options:
+for x in sorted(options):
     if valid_parentheses(x):
-        result.append(''.join(x))
-for x in sorted(result):
-    print(x)
+        print(''.join(x))
