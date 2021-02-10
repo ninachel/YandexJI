@@ -5,9 +5,6 @@ for i in range(n):
     if i == 0:
         print(el)
         last_printed = el
-    else:
-        if el != last_printed:
-            print(el)
-            last_printed = el
-    if i == n - 1:
-        
+    elif el != last_printed:
+        print(el)
+        last_printed = el
