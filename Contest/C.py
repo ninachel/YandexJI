@@ -1,7 +1,11 @@
 n = int(input())
-nums = set()
+last_printed = 0
 for i in range(n):
     el = int(input())
-    nums.add(el)
-for el in sorted(list(nums)):
-    print(el)
+    if i == 0:
+        print(el)
+        last_printed = el
+    else:
+        if el != last_printed:
+            print(el)
+            last_printed = el
