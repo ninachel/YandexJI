@@ -1,3 +1,13 @@
+import itertools
+
+
+def valid_parentheses(seq):
+    pass
+
+
 n = int(input())
-for i in range(n * 2):
-    print()
+sample = "(" * n + ")" * n
+options = list(itertools.permutations(sample))
+for x in options:
+    if valid_parentheses(x):
+        print(''.join(x))
